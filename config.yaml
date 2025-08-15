@@ -1,0 +1,37 @@
+paths:
+  output_dir: ./output
+  reports_dir: ./reports
+
+video:
+  target_fps: 16
+  max_width: 640
+  fourcc: mp4v
+
+pose:
+  model_complexity: 1
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+  smooth_landmarks: true
+
+metrics_thresholds:
+  elbow_min: 100
+  elbow_max: 160
+  spine_lean_max_deg: 20
+  head_over_knee_max_px: 30
+  front_foot_min_deg: 15
+
+scoring_weights:
+  Footwork: 0.2
+  Head Position: 0.25
+  Swing Control: 0.2
+  Balance: 0.2
+  Follow-through: 0.15
+
+reference_ranges:
+  elbow_deg: [110, 150]
+  spine_lean_deg: [-15, 10]
+  head_over_knee_px: [0, 20]
+  front_foot_deg: [10, 45]
+
+report:
+  include_plots: true
